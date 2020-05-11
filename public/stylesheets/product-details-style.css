@@ -1,0 +1,139 @@
+/* crumbs start*/
+
+.crumbs{
+    
+    margin-left: -40px;
+    margin-bottom: 10px;
+}
+.crumbs2 li{
+    list-style: none;
+    
+}
+.crumbs2 li a{
+    text-decoration: none;
+    float: left;
+    margin-right: 6px;
+    border: 1px solid dodgerblue;
+    padding: 5px;
+}
+
+/* crumbs start*/
+
+
+.p-image img{
+    border: 1px solid gainsboro;
+    padding: 5px;
+    margin-left: -15px;
+}
+.p-image img:hover{
+    border: 1px solid red;
+
+}
+.p-image2 img{
+    border:1px solid gainsboro;
+}
+.pd h4{
+    font-size: 20px;
+    color: rgb(122, 121, 121);
+}
+.pd i{
+    color:rgb(122, 121, 121); 
+    font-size: 10px;
+    margin-right: 4px;
+}
+.pd p{
+    float: left;
+    margin-top: -4px;
+    
+}
+.pd .pd2{
+    margin-left: 30px;
+}
+.pdp{
+    width: 650px;
+}
+.pdp2{
+    
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.op{
+    border: 1px solid gainsboro;
+    padding: 3px;
+    margin-top: -5px;
+}
+.pdp3{
+    width: 100%;
+    background-color: gainsboro;
+}
+.price{
+    margin-left: 1%;
+    margin-top: 20px;
+    
+}
+.price p{
+    float: left;
+}
+.price h2{
+    float: left;
+    margin-left: 20px;
+    margin-top: -10px;
+
+    
+}
+.wholesale{
+    margin-left: 1%;
+    margin-top: 10px;
+}
+.wholesale p{
+    float: left;
+    padding: 5px 20px 5px 20px;
+}
+.wholesale h6{
+    float: left;
+    margin-right: 5%;  
+}
+.wl{
+    border: 1px solid grey;
+    float: left;  
+}
+.circle{
+    margin-top: 20px;
+    color: red;
+}
+.price{
+    margin-left: 1%;
+    margin-top: 20px;
+    
+}
+.price p{
+    float: left;
+}
+.price h2{
+    float: left;
+    margin-left: 20px;
+    margin-top: -10px;
+
+    
+}
+.quantity{
+    margin-left: 1%;
+    margin-top: 20px;
+    
+}
+.quantity h6{
+    float: left;
+}
+.quantity input{
+    float: left;
+    margin-left: 40px;
+    width: 100px;
+    padding: 5px;
+}
+.quantity p{
+    float: left;
+    margin-left: 20px;
+    margin-top: -10px;
+
+    
+}
