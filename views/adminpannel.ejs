@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/admin/navbar.css" />
+
+        <script src="/javascripts/admin/admin.js"></script>
+       
+    </head>
+    <body>        
+        <nav class="navbar navbar-def navbar-fixed-top">
+            <div class="container-fluid ">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../">
+                        <img style="margin-top: -10px;" alt="brand" src="/images/logo.png" width="100" height="40">
+                  </a>
+              </div>
+          
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="../india/admin"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#" ><i class="fa fa-amazon" aria-hidden="true"></i>Product</a></li>
+                    
+                  
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+
+          
+          <div  class="container-fluid">
+              <div id="product-page" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <div  style="height: 100%; " class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <ul class="list-group">
+                <li  style="width: 100%; height: 50px;" class="list-group-item list-group-item-success ">
+                  <span onclick="addProduct()" style="font-size:small; cursor: pointer; " class="badge">Add New Product</span>
+            
+                    <!-- <div class="col-sm-3">
+                      <input type="search" name="" id="input" class="form-control" placeholder="Search Product">
+                    </div> -->
+                    <div class="col-sm-2">
+                      <span onclick="getProduct()" style="font-size:small; cursor: pointer; " class="badge">Get Product list</span>
+                    </div>
+                 
+                   
+
+                </li>
+                </ul>
+              </div>
+                <div id="list-product" style="height: 100%; overflow-y: auto; display: none; " class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <!-- <ul class="list-group">
+                        <li class="list-group-item active">
+                          <span style="font-size:small; " class="badge">Edit </span>
+                          <span style="font-size:small; " class="badge">Discount: 30%</span>
+                          <span style="font-size:small; " class="badge">S Rate:&#163; 1.66</span>
+                          <span style="font-size:small; " class="badge">P Rate:&#163; 1.66</span>
+                          <span style="font-size:small; " class="badge">Qty: 1020</span>
+                          I Phone Headphone 2.3
+                        </li>
+                        <li class="list-group-item list-group-item-info">
+                          <span style="font-size:small; " class="badge">Sale Category : Hot Sale</span>
+                          <span style="font-size:small; " class="badge">Sub Category: Mobile</span>
+                          <span style="font-size:small; " class="badge">Category: Electrical</span>
+                          <span style="font-size:small; " class="badge">View Details </span>
+                          <img style="width: 100px; border-radius: 10px; height: 100px; border: 1px solid rgb(25, 85, 134);" src="/images/product/p1.jpg">
+
+                          <p style="margin-left: 110px; margin-top: -50px; height: 50px; overflow-y: auto;">
+                          <strong>Details:</strong> Shopify Handles Everything From Marketing And Payments To Secure Checkout And Shipping. Full Blogging Platform. SEO Optimized. Unlimited 24/7 Support. Social Media Integration. Drop Shipping Integration. Secure Shopping Cart. 100+ Professional Themes. Shopify Handles Everything From Marketing And Payments To Secure Checkout And Shipping. Full Blogging Platform. SEO Optimized. Unlimited 24/7 Support. Social Media Integration. Drop Shipping Integration. Secure Shopping Cart. 100+ Professional Themes.Shopify Handles Everything From Marketing And Payments To Secure Checkout And Shipping. Full Blogging Platform. SEO Optimized. Unlimited 24/7 Support. Social Media Integration. Drop Shipping Integration. Secure Shopping Cart. 100+ Professional Themes.
+                          </p>
+                        </li>                        
+                    </ul>    -->
+                </div>
+                <div id="add-product" style="height: 100%; overflow-y: auto; display: none; " class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                    <!-- <form  action="/admin/addNewProduct" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <div class="col-sm-10 col-sm-offset-2">
+                            <legend>Add a New Product</legend>
+                          </div>                          
+                        </div>
+
+                      <div class="form-group">
+                        <label for="inputProductName" class="col-sm-2 control-label">Product Name:</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="ProductName" id="inputProductName" class="form-control" value="" required="required" >
+                        </div>
+                      </div>
+                          
+                      
+                      <div class="form-group">
+                        <label for="inputCategory" class="col-sm-2 control-label">Category:</label>
+                        <div class="col-sm-2">
+                          <select name="Category" id="inputCategory" class="form-control">
+                            <option value="">-- Select One --</option>
+                          </select>
+                        </div>
+                        <label for="inputCategory" class="col-sm-2 control-label">Sub Category:</label>
+                        <div class="col-sm-2">
+                          <select name="SubCategory" id="inputsubCategory" class="form-control">
+                            <option value="">-- Select One --</option>
+                          </select>
+                        </div>
+
+                        <label for="inputCategory" class="col-sm-2 control-label">Sale Category:</label>
+                        <div class="col-sm-2">
+                          <select name="saleCategory" id="inputsaleCategory" class="form-control">
+                            <option value="">-- Select One --</option>
+                          </select>
+                        </div>
+                      </div>
+                        
+                      
+                      
+                      <div class="form-group">
+                        <label for="inputqty" class="col-sm-2 control-label">Quentity:</label>
+                        <div class="col-sm-1">
+                          <input type="text" name="qty" id="qty" class="form-control" value="" required="required">
+                        </div>
+                        <label for="inputqty" class="col-sm-2 control-label">Purchesh Rate &#163;:</label>
+                        <div class="col-sm-1">
+                          <input type="text" name="pRate" id="pRate" class="form-control" value="" required="required" >
+                        </div>
+                        <label for="inputqty" class="col-sm-2 control-label">Sale Rare &#163;:</label>
+                        <div class="col-sm-1">
+                          <input type="text" name="sRate" id="sRate" class="form-control" value="" required="required" >
+                        </div>
+                        <label for="inputqty" class="col-sm-2 control-label">Sale Discount:</label>
+                        <div class="col-sm-1">
+                          <input type="text" name="sDisc" id="sDisc" class="form-control" value="" required="required">
+                        </div>
+                      </div>
+
+                      
+                      <div class="form-group">
+                        <label for="textareaproDetails" class="col-sm-2 control-label">Product details:</label>
+                        <div class="col-sm-10">
+                          <textarea name="proDetails" id="proDetails" class="form-control" rows="6" required="required"></textarea>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="textareaproDetails" class="col-sm-2 control-label">Product Picture:</label>
+                        <div class="col-sm-2">
+                          <label class="btn btn-default col-xs-12 col-sm-12">Main Pic &nbsp;<span id="img1" class="document"><i class="fa fa-camera" aria-hidden="true"></i></span> 
+                            <input name="file1" type="file" accept="image/*;capture=camera" style="display: none;" class="file">
+                        </label>                          
+                        </div>
+                        <div class="col-sm-2">
+                          <label class="btn btn-default col-xs-12 col-sm-12">Sub Pic &nbsp;<span id="img1" class="document"><i class="fa fa-camera" aria-hidden="true"></i></span> 
+                            <input name="file2" type="file" accept="image/*;capture=camera" style="display: none;" class="file">
+                        </label>                          
+                        </div>
+                        <div class="col-sm-2">
+                          <label class="btn btn-default col-xs-12 col-sm-12">Sub Pic &nbsp;<span id="img1" class="document"><i class="fa fa-camera" aria-hidden="true"></i></span> 
+                            <input name="file3" type="file" accept="image/*;capture=camera" style="display: none;" class="file">
+                        </label>                          
+                        </div>
+                        <div class="col-sm-2">
+                          <label class="btn btn-default col-xs-12 col-sm-12">Sub Pic &nbsp;<span id="img1" class="document"><i class="fa fa-camera" aria-hidden="true"></i></span> 
+                            <input name="file4" type="file" accept="image/*;capture=camera" style="display: none;" class="file">
+                        </label>                          
+                        </div>
+                       
+                      </div>
+                      
+                      
+                      
+                        
+                    
+                        <div class="form-group">
+                          <div class="col-sm-10 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </div>
+                    </form> -->
+                    
+                </div> 
+
+            </div>
+          </div>
+          
+        
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
