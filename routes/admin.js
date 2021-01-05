@@ -226,7 +226,7 @@ categoty.forEach(function(val){
     subCategory :val.subCategory,
     sealCategory :val.sealCategory
   }).save(function(err){
-
+    console.log("caregory update")
   })
 })
 ////////jhdrthe
