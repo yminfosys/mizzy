@@ -1,0 +1,71 @@
+mizzywholesaleelectronics.co.uk
+
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    server_name mizzywholesaleelectronics.co.uk www.mizzywholesaleelectronics.co.uk;
+}
+
+sudo certbot --nginx -d mizzywholesaleelectronics.co.uk -d mizzywholesaleelectronics.co.uk
+
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/mizzywholesaleelectronics.co.uk/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/mizzywholesaleelectronics.co.uk/privkey.pem
+   Your cert will expire on 2021-03-25. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot again
+   with the "certonly" option. To non-interactively renew *all* of
+   your certificates, run "certbot renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+
+
+
+server {
+        listen 443 ssl;
+        server_name mizzywholesaleelectronics.co.uk;
+	ssl_certificate /etc/letsencrypt/live/mizzywholesaleelectronics.co.uk/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/mizzywholesaleelectronics.co.uk/privkey.pem;
+
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+#       ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE$
+        location /  {
+                proxy_pass    http://178.62.3.134:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+
+}
+
+
+server {
+    listen 80;
+    return 301 https://$server_name$request_uri;
+    server_name mizzywholesaleelectronics.co.uk;
+    location / {
+        proxy_pass http://178.62.3.134:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        }
+
+}
+
+
+
+

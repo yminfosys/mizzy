@@ -1,0 +1,24 @@
+  GNU nano 2.9.3        /etc/nginx/sites-available/default                  
+
+    } # managed by Certbot
+
+
+        listen 80 ;
+        listen [::]:80 ;
+    server_name mizzywholesaleelectronics.co.uk;
+    return 404; # managed by Certbot
+
+
+}
+
+
+
+
+
+
+
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell
+
