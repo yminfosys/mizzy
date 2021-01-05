@@ -209,26 +209,26 @@ router.post('/getProduct', function(req, res, next) {
 })
 
 ///////Add Category///////
-var categoty=[
-  {
-    category:"Electrical",
-    subCategory :"Motor",
-    sealCategory :"General"
-},{
-  category:"Electronics",
-  subCategory :"Mobile",
-  sealCategory :"Hot Sale"
-}
-];
-categoty.forEach(function(val){
-  database.category({
-    category:val.category,
-    subCategory :val.subCategory,
-    sealCategory :val.sealCategory
-  }).save(function(err){
-    console.log("caregory update")
-  })
-})
+// var categoty=[
+//   {
+//     category:"Electrical",
+//     subCategory :"Motor",
+//     sealCategory :"General"
+// },{
+//   category:"Electronics",
+//   subCategory :"Mobile",
+//   sealCategory :"Hot Sale"
+// }
+// ];
+// categoty.forEach(function(val){
+//   database.category({
+//     category:val.category,
+//     subCategory :val.subCategory,
+//     sealCategory :val.sealCategory
+//   }).save(function(err){
+//     console.log("caregory update")
+//   })
+// })
 ////////jhdrthe
 
 
