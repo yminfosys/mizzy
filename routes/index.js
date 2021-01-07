@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.post('/getAllProduct', function(req, res, next) {
   database.product.find(function(err,data){
     res.send(data);
-  }).limit(50);
+  }).sort({date: -1}).limit(4);
 });
 
 
